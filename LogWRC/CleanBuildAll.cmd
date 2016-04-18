@@ -1,0 +1,12 @@
+msbuild LogWRC.sln /t:Clean /p:Platform=ARM /p:Configuration=Debug
+msbuild LogWRC.sln /t:Clean /p:Platform=ARM /p:Configuration=Release
+msbuild LogWRC.sln /t:Clean /p:Platform=x86 /p:Configuration=Debug
+msbuild LogWRC.sln /t:Clean /p:Platform=x86 /p:Configuration=Release
+msbuild LogWRC.sln /t:Clean /p:Platform=x64 /p:Configuration=Debug
+msbuild LogWRC.sln /t:Clean /p:Platform=x64 /p:Configuration=Release
+msbuild LogWRC.sln /t:Build /p:Platform=ARM /p:Configuration=Debug
+msbuild LogWRC.sln /t:Build /p:Platform=ARM /p:Configuration=Release
+msbuild LogWRC.sln /t:Build /p:Platform=x86 /p:Configuration=Debug
+msbuild LogWRC.sln /t:Build /p:Platform=x86 /p:Configuration=Release
+msbuild LogWRC.sln /t:Build /p:Platform=x64 /p:Configuration=Debug
+msbuild LogWRC.sln /t:Build /p:Platform=x64 /p:Configuration=Release

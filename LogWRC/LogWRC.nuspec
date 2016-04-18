@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata minClientVersion="3.2">
+        <id>LogWRC.Uwp.Native</id>
+        <title>LogWRC Windows Runtime Component Native Library for Windows 10 UWP</title>
+        <version>1.0.0.1</version>
+        <authors>wpbest</authors>
+        <owners>wpbest</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Easily add LogWRC to your applications. The wpbest LogWRC Library for Universal Windows Platform</description>
+        <summary>LogWRC UWP library</summary>
+        <releaseNotes>LogWRC version 1.0.0.1</releaseNotes>
+        <copyright>Copyright © wpbest</copyright>
+        <tags>wpbest LogWRC Uwp Native</tags>
+    </metadata>
+    <files>
+        <file src="LogWRC.targets"                               target="build\native\" />
+        <file src="LogWRC\Logger.h"                              target="build\native\include\" />
+        <file src="Output\Bin\LogWRC\Win32\Release\LogWRC.winmd" target="lib\uap10.0\" />
+        <file src="Output\Bin\LogWRC\Win32\Release\LogWRC.dll"   target="runtimes\win10-x86\native\" />
+        <file src="Output\Bin\LogWRC\x64\Release\LogWRC.dll"     target="runtimes\win10-x64\native\" />
+        <file src="Output\Bin\LogWRC\ARM\Release\LogWRC.dll"     target="runtimes\win10-arm\native\" />
+        <file src="Output\Bin\LogWRC\Win32\Release\LogWRC.pri"   target="runtimes\win10-x86\native\" />
+        <file src="Output\Bin\LogWRC\x64\Release\LogWRC.pri"     target="runtimes\win10-x64\native\" />
+        <file src="Output\Bin\LogWRC\ARM\Release\LogWRC.pri"     target="runtimes\win10-arm\native\" />
+        <file src="Output\Bin\LogWRC\Win32\Release\LogWRC.pdb"   target="runtimes\win10-x86\native\" />
+        <file src="Output\Bin\LogWRC\x64\Release\LogWRC.pdb"     target="runtimes\win10-x64\native\" />
+        <file src="Output\Bin\LogWRC\ARM\Release\LogWRC.pdb"     target="runtimes\win10-arm\native\" />
+    </files>
+</package>

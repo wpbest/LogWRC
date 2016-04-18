@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="PlatformCheck" BeforeTargets="InjectReference"
+    Condition=" '$(TargetExt)' == '.exe' AND ( ('$(Platform)' != 'x86') AND ('$(Platform)' != 'ARM') AND  ('$(Platform)' != 'x64') )">
+	<Error  Text="When building an executable, your dependence on the Windows Runtime Component forces you to target a specific platform (x86, x64 or ARM). This is because of 
+	the Windows Runtime Component being a C++ WinRT native component." />
+  </Target>
+
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+  
+    <PropertyGroup>
+      <LogWRC-Platform Condition="'$(Platform)' == 'Win32'">x86</LogWRC-Platform>
+      <LogWRC-Platform Condition="'$(Platform)' != 'Win32'">$(Platform)</LogWRC-Platform>
+    </PropertyGroup>
+    
+	<Reference Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0\LogWRC.winmd">
+	  <Implementation>LogWRC.dll</Implementation>
+	</Reference>
+	<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(LogWRC-Platform)\native\LogWRC.dll" />
+  </ItemGroup>
+  
+  <ItemDefinitionGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>  
+</Project>
